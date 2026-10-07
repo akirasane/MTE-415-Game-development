@@ -313,6 +313,8 @@ screen navigation():
 
         textbutton _("Preferences") action ShowMenu("preferences")
 
+        textbutton _("Cheats") action ShowMenu("cheats")
+
         if _in_replay:
 
             textbutton _("End Replay") action EndReplay(confirm=True)
@@ -1516,10 +1518,22 @@ screen stats():
 
     modal False
     zorder 100
-    vbox:
+
+    frame:
         xalign 0.5
         ypos 0.01
-        text "{color=#000}Enemy: [enemy] You: [score] Ties: [ties]{/color}"
+        background Solid("#000000b0")
+        padding (24, 10)
+
+        vbox:
+            spacing 4
+            text "[foe_name]" xalign 0.5 size 28 color "#ffffff"
+            hbox:
+                spacing 30
+                xalign 0.5
+                text "ศัตรู: [enemy]" size 24 color "#ff8a8a"
+                text "เสมอ: [ties]" size 24 color "#dddddd"
+                text "คุณ: [score]" size 24 color "#9ad17a"
 
 
 screen cheats():
